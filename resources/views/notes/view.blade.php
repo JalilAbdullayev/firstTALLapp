@@ -7,8 +7,8 @@
     <p class="mt-4 mb-12">
         {{ $note->body }}
     </p>
-    <div class="flex items-center justify-end mt-12 space-x-2">
-        <h3 class="text-sm">
+    <div class="flex items-center justify-end mt-12 space-x-4">
+        <h3 class="text-sm mr-2">
             Sent from {{ $user->name }}
         </h3>
         <livewire:heart-react :note="$note"/>
