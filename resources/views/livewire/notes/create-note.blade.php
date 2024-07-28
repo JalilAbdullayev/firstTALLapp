@@ -9,7 +9,7 @@ new class extends Component {
     public string $recipient;
     public string $sendDate;
 
-    public function submit() {
+    public function store() {
         $validated = $this->validate([
             'title' => ['required', 'string', 'min:5'],
             'body' => ['required', 'string', 'min:20'],
@@ -21,20 +21,20 @@ new class extends Component {
             'body' => $validated['body'],
             'recipient' => $validated['recipient'],
             'send_date' => $validated['sendDate'],
-            'is_publiched' => false
+            'is_published' => true
         ]);
         $this->redirect(route('notes.index'), navigate: true);
     }
 }; ?>
 
 <div>
-    <form class="space-y-4">
+    <form wire:submit="store" class="space-y-4">
         <x-input wire:model="title" label="Title" placeholder="Title"/>
         <x-textarea wire:model="body" label="Body" placeholder="Body"/>
         <x-input type="email" icon="user" wire:model="recipient" label="Recipient" placeholder="user@mail.com"/>
         <x-input type="date" icon="calendar" wire:model="sendDate" label="Send Date"/>
         <div class="pt-4">
-            <x-button wire:click="submit" right-icon="calendar" label="Schedule Note" spinner/>
+            <x-button type="submit" right-icon="calendar" label="Schedule Note" spinner/>
         </div>
     </form>
     <x-errors/>
