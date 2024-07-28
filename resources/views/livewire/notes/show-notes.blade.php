@@ -43,7 +43,8 @@ new class extends Component {
                 <x-card wire:key="{{ $note->id }}">
                     <div class="flex justify-between">
                         <div>
-                            <a href="" class="text-xl font-bold hover:underline hover:text-blue-500">
+                            <a href="{{ route('notes.view', $note) }}" class="text-xl font-bold hover:underline
+                            hover:text-blue-500" wire:navigate>
                                 {{ $note->title }}
                             </a>
                             <p class="text-xs mt-2">
