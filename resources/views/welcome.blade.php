@@ -35,7 +35,7 @@
             </header>
             <section class="p-6 mx-auto max-w-7xl lg:p-8 flex flex-col justify-center items-center space-y-4">
                 <x-application-logo class="w-24 h-24 fill-current text-primary"/>
-                <x-button primary xl href="{{ route('register') }}">
+                <x-button primary xl href="{{ route('register') }}" wire:navigate>
                     Get started
                 </x-button>
             </section>
