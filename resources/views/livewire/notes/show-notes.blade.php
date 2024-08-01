@@ -50,9 +50,9 @@ new class extends Component {
         <x-button primary icon-right="plus" class="mb-12" href="{{ route('notes.create') }}" wire:navigate>
             Create Note
         </x-button>
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
             @foreach($notes as $note)
-                <x-card wire:key="{{ $note->id }}">
+                <x-card wire:key="{{ $note->id }}" class="w-full">
                     <div class="flex justify-between">
                         <div>
                             <a href="{{ route('notes.view', $note) }}" class="text-xl font-bold hover:underline

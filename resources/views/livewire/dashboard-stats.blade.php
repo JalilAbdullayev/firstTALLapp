@@ -13,7 +13,7 @@ new class extends Component {
     }
 }; ?>
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid md:grid-cols-2 gap-4">
 	<div class="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
 		<div class="flex items-center">
 			<div>
